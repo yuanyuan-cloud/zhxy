@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.myzhxy.mapper.TeacherMapper">
+
+    <select id="getPageList" resultType="com.atguigu.myzhxy.vo.MailListVo">
+        SELECT
+            name, telephone, type
+        FROM
+            (
+                SELECT NAME, TELEPHONE, 'TEACHER' AS 'TYPE'
+                FROM
+                    `TB_TEACHER`
+                UNION ALL
+                SELECT NAME, TELEPHONE, 'ADMIN' AS 'TYPE'
+                FROM TB_ADMIN
+            ) AS MAIL
+        WHERE 1 = 1
+        <if test="name != null and name != ''">
+           AND name LIKE CONCAT('%', CONCAT(#{name}, '%'))
+        </if>
+        <if test="type != null and type != ''">
+            AND type = #{type}
+        </if>
+
+    </select>
+
+
+</mapper>

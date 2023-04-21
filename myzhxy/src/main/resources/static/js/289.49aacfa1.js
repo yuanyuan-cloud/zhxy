@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkfrontend"]=self["webpackChunkfrontend"]||[]).push([[289],{289:function(n,t,e){e.r(t),e.d(t,{default:function(){return f}});var u=function(){var n=this;n._self._c;return n._m(0)},l=[function(){var n=this,t=n._self._c;return t("div",[t("div",{staticClass:"title animated bounceInDown"},[n._v(" hello ")])])}],r={},s=r,i=e(1001),c=(0,i.Z)(s,u,l,!1,null,null,null),f=c.exports}}]);
+//# sourceMappingURL=289.49aacfa1.js.map
